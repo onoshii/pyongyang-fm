@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pyongyang Radio FM</title>
+    <meta name="description" content="Pyongyang Radio FM 専用プレイヤー" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card" aria-label="Pyongyang Radio FM Player">
+        <header class="head">
+          <div class="badge" aria-hidden="true">★</div>
+          <div class="titles">
+            <h1>Pyongyang Radio FM</h1>
+            <p class="sub">one-station player</p>
+          </div>
+        </header>
+
+        <div class="controls">
+          <button id="playBtn" class="playBtn" type="button" disabled>
+            <span class="icon" id="btnIcon" aria-hidden="true">▶</span>
+            <span class="sr-only" id="btnLabel">再生</span>
+            <span class="spinner" id="btnSpinner" aria-hidden="true"></span>
+          </button>
+
+          <div class="status">
+            <div class="line">
+              <span class="label">状態</span>
+              <span class="value" id="statusText">準備中…</span>
+            </div>
+            <div class="line">
+              <span class="label">音量</span>
+              <input
+                id="volume"
+                class="volume"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.5"
+              />
+            </div>
+          </div>
+        </div>
+
+        <p class="hint" id="hintText">
+          読込が終わったら再生ボタンが有効になります。
+        </p>
+
+        <footer class="foot">
+          <a
+            class="link"
+            href="https://kuasark.com/ja/stations/pyongyang-radio-fm/"
+            target="_blank"
+            rel="noopener"
+          >
+            Station page
+          </a>
+        </footer>
+
+        <!-- 音声本体 -->
+        <audio id="audio" preload="none"></audio>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
